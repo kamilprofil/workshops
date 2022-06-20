@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Create IAM user",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/management/users.py",
+            "args": [
+                "create",
+                "--filename",
+                "data/accounts.csv"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Assign group",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/management/users.py",
+            "args": [
+                "assign-group",
+                "--group=typowyJanusz",
+                "--filename",
+                "data/accounts.csv"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Create account in organization",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/management/organization_accounts.py",
+            "args": [
+                "create",
+                "--filename",
+                "data/accounts.csv"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
