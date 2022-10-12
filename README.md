@@ -1,2 +1,0 @@
-# workshops
-Profil Software workshops

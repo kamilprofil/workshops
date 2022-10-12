@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import  { Table } from 'antd';
 
+
+
 export default class InflationList extends React.Component {
   state = {
     persons: []
@@ -10,21 +12,28 @@ export default class InflationList extends React.Component {
   
  columns = [
     {
-        'title' :'Id',
-        key: 'id',
-        dataIndex: 'id'
+        'title' :'Rok',
+        key: 'rok',
+        dataIndex: 'rok'
 
     },
     {
-        'title' :'Name',
-        key: 'name',
-        dataIndex: 'name'
+        'title' :'Miesiąc',
+        key: 'miesiac',
+        dataIndex: 'miesiac'
+
+    },
+    {
+        'title' :'Wartość',
+        key: 'wartosc',
+        dataIndex: 'wartosc'
 
     }
+
   ]
 
   componentDidMount() {
-    axios.get(`http://127.0.0.1:8000/items`)
+    axios.get(process.env.REACT_APP_API_URL + "/items")
       .then(res => {
         const persons = res.data;
         this.setState({ persons });
