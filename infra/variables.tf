@@ -7,6 +7,11 @@ variable "vpc_id" {
   description = "Id of the VPC"
 }
 
+variable "db_user" {
+  type        = string
+  description = "Postgres password"
+}
+
 variable "db_password" {
   type        = string
   description = "Postgres password"
