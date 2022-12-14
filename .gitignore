@@ -8,6 +8,10 @@ sendgrid.env
 .terraform.lock.hcl
 *.tfplan
 *.tfvars
+
 mycommands.md
 .DS_Store
 *.pem
+04-mojenotatki.md
+*.pptx
+*.csv

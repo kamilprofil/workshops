@@ -1,0 +1,34 @@
+@startuml InternetGateway 
+
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v14.0/dist
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/AWSSimplified.puml
+!include AWSPuml/Compute/EC2.puml
+!include AWSPuml/Compute/EC2Instance.puml
+!include AWSPuml/Groups/AWSCloud.puml
+!include AWSPuml/Groups/VPC.puml
+!include AWSPuml/Groups/AvailabilityZone.puml
+!include AWSPuml/Groups/PublicSubnet.puml
+!include AWSPuml/Groups/PrivateSubnet.puml
+!include AWSPuml/NetworkingContentDelivery/VPCNATGateway.puml
+!include AWSPuml/NetworkingContentDelivery/VPCInternetGateway.puml
+
+hide stereotype
+skinparam linetype ortho
+
+AWSCloudGroup(cloud) {
+  VPCGroup(vpc) {
+    VPCInternetGateway(internet_gateway, "Internet gateway", "")
+
+    AvailabilityZoneGroup(az_a, "\tAvailability Zone A\t") {
+      PublicSubnetGroup(az_a_public, "web") {
+        EC2Instance(az_a_ec2_1, "EC2", "") #Transparent
+      }
+      az_a_ec2_1 .u.> internet_gateway
+    }
+
+
+    ' az_a_nat_gateway .[hidden]u.> internet_gateway
+  }
+}
+@enduml
